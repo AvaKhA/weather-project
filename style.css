@@ -1,0 +1,30 @@
+.project {
+  margin: 50px 100px 50px 100px;
+}
+.search-bar {
+  display: block;
+  padding: 10px;
+}
+.current-img {
+  height: 50%;
+  width: 50%;
+  align-self: center;
+}
+.next-days-img {
+  display: block;
+}
+h5 {
+  font-size: 22px;
+}
+.next-days {
+  font-size: 18px;
+}
+.right-box {
+  margin: 50px 50px 20px 20px;
+}
+.card-group {
+  height: 200px;
+  width: 500px;
+  max-height: 200px;
+  max-width: 500px;
+}
