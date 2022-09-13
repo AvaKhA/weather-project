@@ -19,7 +19,7 @@ if (minutes < 10) {
   minutes = `0${minutes}`;
 }
 
-let dateTime = document.querySelector("#dateTime");
+let dateTime = document.querySelector("#date-time");
 dateTime.innerHTML = `${date} ${hours}:${minutes}`;
 
 //city input

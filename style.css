@@ -5,26 +5,28 @@
   display: block;
   padding: 10px;
 }
+.left-box {
+  list-style: none;
+  text-align: center;
+  min-width: 250px;
+  padding: 20px 10px;
+  border: 1px solid #cfd2cf;
+  border-radius: 10px;
+}
+.city-name {
+  font-weight: bold;
+  font-size: large;
+}
 .current-img {
-  height: 50%;
-  width: 50%;
+  max-width: 100px;
+  max-height: 100px;
   align-self: center;
 }
-.next-days-img {
-  display: block;
-}
-h5 {
-  font-size: 22px;
-}
-.next-days {
-  font-size: 18px;
-}
-.right-box {
-  margin: 50px 50px 20px 20px;
-}
-.card-group {
-  height: 200px;
-  width: 500px;
-  max-height: 200px;
-  max-width: 500px;
+.next-day-card {
+  list-style: none;
+  text-align: center;
+  min-width: 250px;
+  padding: 20px 10px;
+  border: 1px solid #cfd2cf;
+  border-radius: 10px;
 }

@@ -33,69 +33,31 @@
           Search
         </button>
       </div>
-      <div class="row row-cols-1 row-cols-md-3 g-2">
-        <div class="col-5">
-          <div class="card text-center">
-            <div class="card-body">
-              <h3 class="card-title" id="city-name">City</h3>
-              <p class="card-text" id="dateTime">Friday 7 Sep</p>
+      <div class="row">
+        <div class="col-4">
+          <ul class="left-box">
+            <li class="city-name" id="city-name">City</li>
+            <li class="date-time" id="date-time">Friday 00:00</li>
+            <li>
               <img
-                src="visuals/partly couldy.png"
-                class="card-img-top current-img"
-                alt="weather"
+                src="visuals/partly cloudy.png"
+                alt="partly cloudy"
+                class="current-img"
               />
-              <div class="card-body">
-                <h5 class="card-title" id="current-temperature">
-                  current temperature: 18°C
-                </h5>
-              </div>
-            </div>
-          </div>
+            </li>
+            <li class="current-temperature" id="current-temperature">
+              current temperature: 18°C
+            </li>
+          </ul>
         </div>
-        <div class="col right-box">
+        <div class="col-8 right-box">
           <div class="card-group">
             <div class="card text-center">
-              <div class="card-body">
-                <p class="card-text next-days">8 Sep</p>
-                <img
-                  src="visuals/sun.png"
-                  class="card-img-top next-days-img"
-                  alt="..."
-                />
-                <h5 class="card-title">20°C</h5>
-              </div>
-            </div>
-            <div class="card text-center">
-              <div class="card-body">
-                <p class="card-text next-days">9 Sep</p>
-                <img
-                  src="visuals/sun.png"
-                  class="card-img-top next-days-img"
-                  alt="..."
-                />
-                <h5 class="card-title">16°C</h5>
-              </div>
-            </div>
-            <div class="card text-center">
-              <div class="card-body">
-                <p class="card-text next-days">10 Sep</p>
-                <img src="visuals/sun.png" class="card-img-top" alt="..." />
-                <h5 class="card-title">22°C</h5>
-              </div>
-            </div>
-            <div class="card text-center">
-              <div class="card-body">
-                <p class="card-text next-days">11 Sep</p>
-                <img src="visuals/sun.png" class="card-img-top" alt="..." />
-                <h5 class="card-title">25°C</h5>
-              </div>
-            </div>
-            <div class="card text-center">
-              <div class="card-body">
-                <p class="card-text next-days">12 Sep</p>
-                <img src="visuals/sun.png" class="card-img-top" alt="..." />
-                <h5 class="card-title">20°C</h5>
-              </div>
+              <ul class="next-day-card">
+                <li>8 Sep</li>
+                <li><img src="visuals/sunny.png" alt="..." /></li>
+                <li>20°C</li>
+              </ul>
             </div>
           </div>
         </div>
