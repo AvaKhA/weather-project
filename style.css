@@ -1,5 +1,6 @@
 .project {
   margin: 50px 100px 50px 100px;
+  min-width: 800px;
 }
 .search-bar {
   display: block;
@@ -22,11 +23,20 @@
   max-height: 100px;
   align-self: center;
 }
+.right-cards {
+  margin-top: 45px;
+}
+.card {
+  border: 1px solid #cfd2cf;
+}
 .next-day-card {
   list-style: none;
   text-align: center;
-  min-width: 250px;
-  padding: 20px 10px;
-  border: 1px solid #cfd2cf;
-  border-radius: 10px;
+  padding: 10px;
+  margin: 0px;
+}
+.forecast-img {
+  max-width: 60px;
+  max-height: 60px;
+  align-self: center;
 }
