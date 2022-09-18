@@ -56,8 +56,11 @@ function showInformation(response) {
   let dateTimeElement = document.querySelector("#date-time");
   let iconElement = document.querySelector("#current-icon");
 
+  celsiusTemperature = response.data.main.temp;
+  console.log(celsiusTemperature);
+
   cityName.innerHTML = `${response.data.name}`;
-  temperatureElement.innerHTML = Math.round(response.data.main.temp);
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
   descriptionElement.innerHTML = `${response.data.weather[0].description}`;
   humidityElement.innerHTML = `Humidity: ${response.data.main.humidity}%`;
   windElement.innerHTML = `Wind: ${Math.round(response.data.wind.speed)} Km/h`;
@@ -95,16 +98,23 @@ function showDate(timestamp) {
 }
 
 // celsius and fahrenheit
+let celsiusTemperature = null;
+
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 66;
+  let temperatureElement = document.querySelector("#current-temperature");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  celsiusLink.classList.remove("disable");
+  fahrenheitLink.classList.add("disable");
 }
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = 19;
+  let temperatureElement = document.querySelector("#current-temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+  celsiusLink.classList.add("disable");
+  fahrenheitLink.classList.remove("disable");
 }
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
