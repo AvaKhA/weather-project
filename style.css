@@ -23,6 +23,23 @@
   max-height: 100px;
   align-self: center;
 }
+#current-temperature {
+  font-size: 25px;
+}
+.units {
+  position: relative;
+  font-size: 14px;
+  top: -7px;
+}
+#celsius-link,
+#fahrenheit-link {
+  text-decoration: none;
+}
+.weather-description {
+  font-size: 12px;
+  color: gray;
+  text-transform: capitalize;
+}
 .right-cards {
   margin-top: 45px;
 }

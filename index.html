@@ -43,10 +43,21 @@
                 src="visuals/partly cloudy.png"
                 alt="partly cloudy"
                 class="current-img"
+                id="current-icon"
               />
             </li>
-            <li class="current-temperature" id="current-temperature">
-              current temperature: 18°C
+            <li>
+              <strong id="current-temperature">0</strong
+              ><span class="units"
+                ><a href="#" id="celsius-link">°C</a> |
+                <a href="#" id="fahrenheit-link">°F</a></span
+              >
+              <li class="weather-description">
+              <div id="description"></div>
+              <div id="humidity"></div>
+              <div id="wind"></div>
+              </li>
+
             </li>
           </ul>
         </div>
