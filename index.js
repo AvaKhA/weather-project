@@ -57,7 +57,6 @@ function showInformation(response) {
   let iconElement = document.querySelector("#current-icon");
 
   celsiusTemperature = response.data.main.temp;
-  console.log(celsiusTemperature);
 
   cityName.innerHTML = `${response.data.name}`;
   temperatureElement.innerHTML = Math.round(celsiusTemperature);
@@ -72,6 +71,7 @@ function showInformation(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   console.log(response.data);
+  getForecast(response.data.coord);
 }
 
 function showDate(timestamp) {
@@ -124,7 +124,14 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
 
 //forecast
-function displayForecast() {
+function getForecast(coordinates) {
+  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let forecastapiUrl = `api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(forecastapiUrl);
+}
+
+function displayForecast(response) {
+  console.log(response);
   let forecastCard = document.querySelector("#forecast");
   let forecastHTML = "";
   let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
