@@ -48,7 +48,7 @@
   text-transform: capitalize;
 }
 .right-cards {
-  margin-top: 45px;
+  margin-top: 70px;
 }
 .card {
   border: 1px solid #cfd2cf;
@@ -63,4 +63,7 @@
   max-width: 60px;
   max-height: 60px;
   align-self: center;
+}
+.forecast-date {
+  font-weight: bold;
 }

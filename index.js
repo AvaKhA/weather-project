@@ -122,3 +122,29 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", convertToCelsius);
+
+//forecast
+function displayForecast() {
+  let forecastCard = document.querySelector("#forecast");
+  let forecastHTML = "";
+  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `            
+            <div class="card text-center">
+              <ul class="next-day-card">
+                <li class="forecast-date">${day}</li>
+                <li>
+                  <img src="visuals/sunny.png" alt="..." class="forecast-img" />
+                </li>
+                <li>20°C</li>
+              </ul>
+            </div>`;
+  });
+  forecastCard.innerHTML = forecastHTML;
+}
+
+//call function
+generateWeatherUrl("tehran");
+displayForecast();
