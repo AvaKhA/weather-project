@@ -71,6 +71,7 @@ function showInformation(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   console.log(response.data);
+  console.log(response.data.coord.lon);
   getForecast(response.data.coord);
 }
 
@@ -125,25 +126,28 @@ celsiusLink.addEventListener("click", convertToCelsius);
 
 //forecast
 function getForecast(coordinates) {
-  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
-  let forecastapiUrl = `api.openweathermap.org/data/2.5/forecast?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(forecastapiUrl);
+  let apiKey = "ab8e7ef210556986d1c9a75d6007b825";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
 }
 
 function displayForecast(response) {
-  console.log(response);
+  let forecastData = response.data.daily;
+  forecastData.length = forecastData.length - 3;
+  console.log(forecastData);
   let forecastCard = document.querySelector("#forecast");
   let forecastHTML = "";
-  let days = ["Fri", "Sat", "Sun", "Mon", "Tue"];
-  days.forEach(function (day) {
+  forecastData.forEach(function (forecast) {
     forecastHTML =
       forecastHTML +
       `            
             <div class="card text-center">
               <ul class="next-day-card">
-                <li class="forecast-date">${day}</li>
+                <li class="forecast-date">${findDay(forecast.dt)}</li>
                 <li>
-                  <img src="visuals/sunny.png" alt="..." class="forecast-img" />
+                  <img src="http://openweathermap.org/img/wn/${
+                    forecast.weather[0].icon
+                  }@2x.png" alt="..." class="forecast-img" />
                 </li>
                 <li>20°C</li>
               </ul>
@@ -154,4 +158,3 @@ function displayForecast(response) {
 
 //call function
 generateWeatherUrl("tehran");
-displayForecast();
