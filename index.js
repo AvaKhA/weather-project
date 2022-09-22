@@ -71,7 +71,6 @@ function showInformation(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   console.log(response.data);
-  console.log(response.data.coord.lon);
   getForecast(response.data.coord);
 }
 
@@ -133,14 +132,15 @@ function getForecast(coordinates) {
 
 function displayForecast(response) {
   let forecastData = response.data.daily;
-  forecastData.length = forecastData.length - 3;
+  //forecastData.length = forecastData.length - 3;
   console.log(forecastData);
   let forecastCard = document.querySelector("#forecast");
   let forecastHTML = "";
-  forecastData.forEach(function (forecast) {
-    forecastHTML =
-      forecastHTML +
-      `            
+  forecastData.forEach(function (forecast, index) {
+    if (index < 6 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `            
             <div class="card text-center">
               <ul class="next-day-card">
                 <li class="forecast-date">${findDay(forecast.dt)}</li>
@@ -149,12 +149,23 @@ function displayForecast(response) {
                     forecast.weather[0].icon
                   }@2x.png" alt="..." class="forecast-img" />
                 </li>
-                <li>20°C</li>
+                <li><span class="max-temp">${Math.round(
+                  forecast.temp.max
+                )}°</span> <span class="min-temp">${Math.round(
+          forecast.temp.min
+        )}°</span></li>
               </ul>
             </div>`;
+    }
   });
   forecastCard.innerHTML = forecastHTML;
 }
 
+function findDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let weekDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return weekDays[day];
+}
 //call function
 generateWeatherUrl("tehran");

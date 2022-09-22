@@ -67,3 +67,6 @@
 .forecast-date {
   font-weight: bold;
 }
+.min-temp {
+  color: gray;
+}
