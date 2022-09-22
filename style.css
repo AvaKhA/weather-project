@@ -1,6 +1,12 @@
 .project {
-  margin: 50px 100px 50px 100px;
+  margin: 20px 100px 20px 100px;
+  padding: 20px;
   min-width: 800px;
+}
+.weather-container {
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid black;
 }
 .search-bar {
   display: block;
