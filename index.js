@@ -97,32 +97,6 @@ function showDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-// celsius and fahrenheit
-let celsiusTemperature = null;
-
-function convertToFahrenheit(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
-  celsiusLink.classList.remove("disable");
-  fahrenheitLink.classList.add("disable");
-}
-
-function convertToCelsius(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#current-temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  celsiusLink.classList.add("disable");
-  fahrenheitLink.classList.remove("disable");
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", convertToCelsius);
-
 //forecast
 function getForecast(coordinates) {
   let apiKey = "ab8e7ef210556986d1c9a75d6007b825";
