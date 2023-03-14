@@ -41,7 +41,7 @@ searchForm.addEventListener("keydown", function (event) {
 
 // weather API
 function generateWeatherUrl(city) {
-  let apiKey = "c95d60a1e3adbeb286133f1ebebc2579";
+  let apiKey = "19220949c71a9d2f2c73e2b27f21917a";
   let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(url).then(showInformation);
 }
@@ -55,6 +55,8 @@ function showInformation(response) {
   let windElement = document.querySelector("#wind");
   let dateTimeElement = document.querySelector("#date-time");
   let iconElement = document.querySelector("#current-icon");
+
+  console.log(response);
 
   celsiusTemperature = response.data.main.temp;
 
